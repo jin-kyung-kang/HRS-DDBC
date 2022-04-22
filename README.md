@@ -4,7 +4,7 @@
 and  listed in the table below.
 
  
-* Typically these macros can be executed in one of the two modes: *test* or *regular8 mode
+* Typically these macros can be executed in one of the two modes: **test** or **regular** mode
 * Execution mode of a given macro is determined based on the value of the `outinfo` argument
     - By default the `outinfo` argument is blank and macro is executed in a regular mode
     - If the `outinfo` argument is not blank  the `funcd` macro is executed in a test mode
@@ -12,4 +12,4 @@ and  listed in the table below.
  
 | Macro           | Description                     | Mandatory arguments             |
 | :---            | :-----                          | :-----                          |
-| `funcd`         | Creates ADL and IADL variables  | `years =', 'libin =`, `outdt =` | 
+| `funcd`         | Creates ADL and IADL variables  | `years =`, `libin =`, `outdt =` | 
