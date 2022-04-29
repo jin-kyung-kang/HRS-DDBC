@@ -1,4 +1,7 @@
 proc format;
+        value yn_fmt
+                 0='No'
+                 1='Yes';
   	value gender_fmt 
   	        1='Male' 
   	        2='Female';
@@ -75,6 +78,58 @@ proc format;
 		5='Retired'
 		6='Disabled'
 		7='Not in LbrF';
+value proxy_fmt
+			0='Not proxy'
+			1='Proxy';
+	value iwstat_fmt
+			0='Inap.'
+			1='Resp,alive'
+			4='NR,alive'
+			5='NR,died this wv'
+			6='NR,died prev wv'
+			7='NR,dropped from samp'
+			9='NR,DK if alive or died';
+
+   value hlthrte_fmt
+   			1='EXCELLENT'
+			2='VERY GOOD'
+			3='GOOD'
+			4='FAIR'
+			5='POOR';   		
+   value hlthrtecomp_fmt
+			1='BETTER'
+			2='ABOUT SAME'
+			3='WORSE';
+   value incondlm_fmt
+   			31='EVERY DAY';
+   value eyerate_fmt
+   			1='EXCELLENT'
+			2='VERY GOOD'
+			3='GOOD'
+			4='FAIR'
+			5='POOR'
+			6='[VOL] LEGALLY BLIND';
+   value eyedistv_fmt
+   			1='EXCELLENT'
+			2='VERY GOOD'
+			3='GOOD'
+			4='FAIR'
+			5='POOR';
+   value eyernearv_fmt
+   			1='EXCELLENT'
+			2='VERY GOOD'
+			3='GOOD'
+			4='FAIR'
+			5='POOR';
+   value eyecat_surg2_fmt
+   			1='ONE EYE ONLY'
+			2='BOTH EYES';
+   value hearrate_fmt
+   			1='EXCELLENT'
+			2='VERY GOOD'
+			3='GOOD'
+			4='FAIR'
+			5='POOR';		
 run;
 
 %macro sociodemo_fmts;
@@ -94,6 +149,99 @@ run;
 %mend sociodemo_fmts;
 
 %macro funcd_fmts;
-/* ... */
-
+format dress_ADL yn_fmt. 
+       bathe_ADL yn_fmt. 
+       eat_ADL yn_fmt. 
+       toilet_ADL yn_fmt. 
+       walk_ADL yn_fmt. 
+       bed_ADL yn_fmt.
+       meal_IADL yn_fmt.
+       groc_IADL yn_fmt.
+       phone_IADL yn_fmt.
+       medicine_IADL yn_fmt. 
+       money_IADL yn_fmt.
+       dress_DD yn_fmt.
+       bathe_DD yn_fmt.
+       eat_DD yn_fmt. 
+       toilet_DD yn_fmt. 
+       walk_DD yn_fmt. 
+       bed_DD yn_fmt.;
 %mend funcd_fmts;
+
+%macro health_fmts;
+ format hlthrte hlthrte_fmt.
+        hlthrtecomp hlthrtecomp_fmt. 
+	bloodp yn_fmt. 
+	bloodprx yn_fmt.
+	bloodplwgt yn_fmt. 
+	bloodpcont yn_fmt.
+        diabetes yn_fmt.
+        diabswa yn_fmt.
+        diabins yn_fmt.
+        diablstwgt yn_fmt.
+        diabdiet yn_fmt.
+        diabcont yn_fmt.
+        diabkidney yn_fmt.
+        cancer yn_fmt.
+        cancerdr yn_fmt.
+        cancertrt yn_fmt.
+        chemomed yn_fmt. 
+        surgbiop yn_fmt. 
+        RadiXray yn_fmt. 
+        meditrt yn_fmt.
+	cannotrt yn_fmt.
+	othertrt yn_fmt.
+	cancernew yn_fmt.
+      	lung yn_fmt.
+      	lungrx yn_fmt.
+      	lungoxy yn_fmt.
+      	lungthpy yn_fmt.
+      	lungacti yn_fmt.
+	heart yn_fmt.
+	heartrx yn_fmt.
+	heartdr yn_fmt.
+	heartatt yn_fmt.
+	hrtattrx yn_fmt.
+	angina yn_fmt.
+	anginarx yn_fmt. 
+        anglimit yn_fmt.
+        chf yn_fmt.
+        chfhosp yn_fmt.
+        chfrx yn_fmt.
+        hrttrt yn_fmt.
+        hrtsurg yn_fmt.
+	stroke yn_fmt.
+	strokedr yn_fmt.
+	strokepr yn_fmt.
+	strokwek yn_fmt.
+	strokspk yn_fmt.
+	strokvis yn_fmt.
+	strokthk yn_fmt.
+        strokrx yn_fmt.
+        strokthp yn_fmt.
+        strokoth yn_fmt.
+	psychiat yn_fmt.
+	psythrpy yn_fmt. 
+	psyrx	yn_fmt.
+	arthrit yn_fmt.
+	arthstif yn_fmt.
+	arthrx yn_fmt.
+	arthlimit yn_fmt.
+	arthjrepl yn_fmt.
+	fall yn_fmt.
+	fallinju yn_fmt.
+	fallbhip yn_fmt.
+	incontin yn_fmt. 
+	incondlm incondlm_fmt.
+	incondk1 yn_fmt. 
+	incondk2 yn_fmt. 
+	inconpad yn_fmt.
+	eyerate eyerate_fmt.
+	eyedistv eyedistv_fmt.
+	eyernearv eyernearv_fmt. 
+	eyecat_surg yn_fmt.
+	eyecat_surg2 eyecat_surg2_fmt.
+	eyecat_imp yn_fmt. 
+	eye_glauc yn_fmt.
+	hearrate hearrate_fmt.;
+%mend health_fmts;
