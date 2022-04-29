@@ -1,3 +1,5 @@
+libname lib ".";
+
 filename hrs_inc "_include-HRS-macros.sas";
 %include hrs_inc;
 
