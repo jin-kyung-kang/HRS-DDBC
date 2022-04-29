@@ -9,5 +9,5 @@ filename _ff "./hrs-macros/_auxiliary_macros.sas";
 filename _ff "./hrs-macros/funcd.sas";
 %include _ff;
 
-filename _ff "./hrs-macros/health.sas.sas";
+filename _ff "./hrs-macros/health.sas";
 %include _ff;
