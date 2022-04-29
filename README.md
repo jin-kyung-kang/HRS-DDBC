@@ -12,4 +12,5 @@ and  listed in the table below.
  
 | Macro           | Description                     | Mandatory arguments             |
 | :---            | :-----                          | :-----                          |
-| `funcd`         | Creates ADL and IADL variables  | `years =`, `libin =`, `outdt =` | 
+| `funcd`         | Creates ADL and IADL variables  | `years`,   `libin =`, `outdt =` | 
+| `health`        | Creates health variables        | `years `,  `libin =`, `outdt =` | 
